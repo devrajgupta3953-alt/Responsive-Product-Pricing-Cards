@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Pricing Cards | Dev Raj Gupta</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">CloudPulse</span>
+        <span class="brand-tag">by Dev Raj Gupta</span>
+      </div>
+      <div class="header-meta">Project 03 &middot; Responsive SaaS Pricing</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="section-intro">
+        <span class="eyebrow">Simple, Transparent Pricing</span>
+        <h2 id="pricing-heading">Choose the Right Plan for Your Workflow</h2>
+        <p class="subtitle">
+          Deploy fullstack apps, manage databases, and scale effortlessly. Switch to yearly billing to save 20% across every tier.
+        </p>
+
+        <div class="billing-toggle-wrapper">
+          <div class="toggle-group" role="group" aria-label="Billing cycle toggle">
+            <button type="button" id="monthly" class="toggle-btn active" aria-pressed="true">
+              Monthly
+            </button>
+            <button type="button" id="yearly" class="toggle-btn" aria-pressed="false">
+              Yearly <span class="save-pill">Save 20%</span>
+            </button>
+          </div>
+          <p id="billing-summary" class="billing-summary" aria-live="polite">
+            Showing monthly billing prices. Switch to yearly to get 20% off.
+          </p>
+        </div>
+      </div>
+
+      <div id="selection-banner" class="selection-banner" role="status" aria-live="polite"></div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1: Starter -->
+        <article class="card" data-plan="Starter">
+          <div class="card-top">
+            <div class="plan-header">
+              <h3>Starter</h3>
+              <span class="plan-chip">For Individuals</span>
+            </div>
+            <p class="plan-desc">
+              Ideal for side projects, student portfolios, and early prototypes.
+            </p>
+            <div class="price-box">
+              <p class="price" data-monthly="₹499" data-yearly="₹4,790">₹499</p>
+              <div class="price-meta">
+                <span class="unit">per month</span>
+                <span class="billing-note" data-monthly="Billed monthly (₹5,988/yr without discount)" data-yearly="Equals ₹399/mo &middot; You save ₹1,198/yr (20% off)">Billed monthly (₹5,988/yr without discount)</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="feature-list" aria-label="Starter plan features">
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Up to 3 active cloud projects</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> 10 GB high-speed SSD storage</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Automatic SSL &amp; custom domain</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Global edge CDN delivery</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Standard email support (48h SLA)</li>
+          </ul>
+
+          <div class="card-action">
+            <button type="button" class="cta-btn cta-secondary" data-select-plan="Starter">
+              Choose Starter
+            </button>
+          </div>
+        </article>
+
+        <!-- Plan 2: Pro (Highlighted Popular Plan) -->
+        <article class="card popular" data-plan="Pro">
+          <div class="ribbon" aria-label="Most Popular Plan">Most Popular</div>
+          <div class="card-top">
+            <div class="plan-header">
+              <h3>Pro</h3>
+              <span class="plan-chip chip-popular">Best for Developers</span>
+            </div>
+            <p class="plan-desc">
+              Full power for production web apps, continuous deployment, and fast-moving builders.
+            </p>
+            <div class="price-box">
+              <p class="price" data-monthly="₹999" data-yearly="₹9,590">₹999</p>
+              <div class="price-meta">
+                <span class="unit">per month</span>
+                <span class="billing-note" data-monthly="Billed monthly (₹11,988/yr without discount)" data-yearly="Equals ₹799/mo &middot; You save ₹2,398/yr (20% off)">Billed monthly (₹11,988/yr without discount)</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="feature-list" aria-label="Pro plan features">
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Unlimited active cloud projects</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> 100 GB NVMe storage &amp; backups</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Automated CI/CD preview branches</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Real-time performance &amp; log metrics</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Priority 24/7 chat support (4h SLA)</li>
+          </ul>
+
+          <div class="card-action">
+            <button type="button" class="cta-btn cta-primary" data-select-plan="Pro">
+              Get Started with Pro
+            </button>
+          </div>
+        </article>
+
+        <!-- Plan 3: Team -->
+        <article class="card" data-plan="Team">
+          <div class="ribbon ribbon-value">Best Value</div>
+          <div class="card-top">
+            <div class="plan-header">
+              <h3>Team</h3>
+              <span class="plan-chip">For Organizations</span>
+            </div>
+            <p class="plan-desc">
+              Built for collaborative workflows, dedicated infrastructure, and enterprise security.
+            </p>
+            <div class="price-box">
+              <p class="price" data-monthly="₹2,499" data-yearly="₹23,990">₹2,499</p>
+              <div class="price-meta">
+                <span class="unit">per month</span>
+                <span class="billing-note" data-monthly="Billed monthly (₹29,988/yr without discount)" data-yearly="Equals ₹1,999/mo &middot; You save ₹5,998/yr (20% off)">Billed monthly (₹29,988/yr without discount)</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="feature-list" aria-label="Team plan features">
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Unlimited projects &amp; team seats</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> 1 TB NVMe multi-region storage</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Role-based access control &amp; SSO</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> 99.99% uptime SLA guarantee</li>
+            <li><span class="check-icon" aria-hidden="true">&#10003;</span> Dedicated solutions engineer (1h SLA)</li>
+          </ul>
+
+          <div class="card-action">
+            <button type="button" class="cta-btn cta-secondary" data-select-plan="Team">
+              Choose Team
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Designed &amp; Built by <strong>Dev Raj Gupta</strong> &middot;
+      <a href="https://github.com/devrajgupta3953-alt" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
+      <a href="https://devrajgupta3953-alt.github.io/r-Personal-Portfolio-Landing-Page/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+    </p>
+  </footer>
+</body>
+</html>
